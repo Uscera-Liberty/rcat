@@ -15,9 +15,6 @@ def index():
         username = reg_form.username.data
         password = reg_form.password.data
 
-        user_object = User.query.filter_by(username=username).first()
-        if user_object:
-            return "Someone else take this surname)"
         user = User(username=username , password=password)
         db.session.add(user)
         db.session.commit()
